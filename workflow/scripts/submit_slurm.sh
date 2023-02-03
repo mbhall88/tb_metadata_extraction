@@ -17,7 +17,7 @@ THREADS=1
 PROFILE="slurm.punim1703"
 BINDS="/data/scratch/projects/punim1703/"
 SINGULARITY_ARGS="--nv -B $BINDS"
-CMD="snakemake --profile $PROFILE --rerun-incomplete --local-cores $THREADS $* --singularity-args '$SINGULARITY_ARGS'"
+CMD="snakemake --profile $PROFILE --rerun-incomplete --scheduler greedy --local-cores $THREADS $* --singularity-args '$SINGULARITY_ARGS'"
 
 ssubmit -t "$TIME" -m "$MEMORY" -o "$LOG_DIR"/"$JOB_NAME".o \
     -e "$LOG_DIR"/"$JOB_NAME".e "$JOB_NAME" "$CMD" -- -c "$THREADS"
