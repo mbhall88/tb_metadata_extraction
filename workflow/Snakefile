@@ -5,7 +5,7 @@ from pathlib import Path
 configfile: "config/config.yaml"
 
 
-df = pd.read_csv("config/samplesheet.csv", low_memory=True)
+df = pd.read_csv(config["samplesheet"], low_memory=True)
 
 workflow = Path("workflow").resolve()
 RESULTS = Path("results").resolve()
