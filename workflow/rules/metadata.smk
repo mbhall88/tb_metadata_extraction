@@ -11,7 +11,7 @@ rule get_metadata:
         ENVS / "metadata.yaml"
     params:
         url_stem="https://www.ebi.ac.uk/ena/browser/api/xml",
-        timeout="60",
+        timeout=60,
     script:
         SCRIPTS / "get_metadata.py"
 
