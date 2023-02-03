@@ -7,12 +7,12 @@ configfile: "config/config.yaml"
 
 df = pd.read_csv(config["samplesheet"], low_memory=True)
 
-workflow = Path("workflow").resolve()
+workflow_dir = Path("workflow").resolve()
 RESULTS = Path("results").resolve()
-ENVS = workflow / "envs"
-SCRIPTS = workflow / "scripts"
-RULES = workflow / "rules"
-LOGS = Path("/logs/rules").resolve()
+ENVS = workflow_dir / "envs"
+SCRIPTS = workflow_dir / "scripts"
+RULES = workflow_dir / "rules"
+LOGS = Path("logs/rules").resolve()
 project_samples = sorted({(p, s) for p, s in zip(df["bioproject"], df["biosample"])})
 
 target_files = set()
