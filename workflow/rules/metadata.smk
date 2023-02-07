@@ -5,8 +5,8 @@ rule get_metadata:
         LOGS / "get_metadata/{project}/{biosample}.log",
     threads: 1
     resources:
-        time="5m",
-        mem_mb=300,
+        time="90s",
+        mem_mb=50,
     conda:
         ENVS / "metadata.yaml"
     params:
