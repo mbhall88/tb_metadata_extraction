@@ -6,7 +6,7 @@ rule get_metadata:
     threads: 1
     resources:
         time="90s",
-        mem_mb=50,
+        mem_mb=300,
     conda:
         ENVS / "metadata.yaml"
     params:
